@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+<link rel="preconnect" href="https://api.counterapi.dev">
+<link rel="dns-prefetch" href="https://api.counterapi.dev">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0b0f">
+<meta name="description" content="Free online text to speech converter — convert text to natural-sounding audio. Multiple languages, voices, adjustable speed and pitch. No signup, 100% in your browser.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jimmywithfiona.com/text-to-speech/">
+<meta name="keywords" content="text to speech, TTS, voice generator, speech synthesis, text to voice, free TTS, online voice">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Text to Speech">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Text to Speech Converter — Free Online TTS | No Signup">
+<meta property="og:description" content="Convert text to natural-sounding speech. Multiple languages and voices, adjustable speed and pitch. Free, no signup, 100% in browser.">
+<meta property="og:url" content="https://jimmywithfiona.com/text-to-speech/">
+<meta property="og:image" content="https://jimmywithfiona.com/text-to-speech/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Text to Speech Converter — Free Online TTS">
+<meta name="twitter:description" content="Convert text to natural-sounding speech. Free, no signup.">
+<meta name="twitter:image" content="https://jimmywithfiona.com/text-to-speech/og.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1840337371416691" crossorigin="anonymous"></script>
+<title>Text to Speech Converter — Free Online TTS | No Signup</title>
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Text to Speech Converter","url":"https://jimmywithfiona.com/text-to-speech/","description":"Free online text to speech converter. Multiple languages, voices, adjustable speed and pitch. 100% in browser.","applicationCategory":"MultimediaApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the text to speech tool free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free. No signup, no download, no limits. All processing happens in your browser using the Web Speech API."}},{"@type":"Question","name":"What languages are supported?","acceptedAnswer":{"@type":"Answer","text":"The tool supports all languages available in your browser's speech synthesis engine, including English, Spanish, French, German, Chinese, Japanese, and many more."}},{"@type":"Question","name":"Can I adjust the voice speed and pitch?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can adjust both the speaking rate (0.5x to 2x) and pitch (0 to 2) using the sliders."}},{"@type":"Question","name":"Does it work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes, the tool works on both desktop and mobile browsers that support the Web Speech API."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jimmywithfiona.com/"},{"@type":"ListItem","position":2,"name":"Text to Speech","item":"https://jimmywithfiona.com/text-to-speech/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Text to Speech Converter","url":"https://jimmywithfiona.com/text-to-speech/","isPartOf":{"@type":"WebSite","name":"Text to Speech","url":"https://jimmywithfiona.com/text-to-speech/"}}
+</script>
+</head>
+<body>
+<nav class="navbar">
+    <a class="brand" href="/text-to-speech/">🔊 Text to Speech</a>
+    <div class="nav-links">
+        <a href="/text-to-speech/" class="active">Convert</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="contact.html">Contact</a>
+        <a href="/">🏠 Home</a>
+    </div>
+</nav>
+<main>
+<!-- AdSense Ad Unit -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1840337371416691" data-ad-slot="5549785669" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <h1>Text to Speech Converter 🔊</h1>
+    <p class="subtitle">Convert text to natural-sounding speech — multiple languages, voices, adjustable speed & pitch.</p>
+
+    <div class="voice-info" id="voiceInfo">
+        <strong>⏳ Loading voices...</strong> Please wait while available voices are loaded.
+    </div>
+
+    <div class="tool-card">
+        <div class="control-row three">
+            <div class="control-group">
+                <label>Language</label>
+                <select id="language" onchange="filterVoices()"></select>
+            </div>
+            <div class="control-group">
+                <label>Voice</label>
+                <select id="voice"></select>
+            </div>
+            <div class="control-group">
+                <label>Sample Text</label>
+                <select id="sampleText" onchange="loadSample()">
+                    <option value="">— Select sample —</option>
+                    <option value="Hello! This is a text to speech demo. Try adjusting the speed and pitch to find the voice you like.">English greeting</option>
+                    <option value="The quick brown fox jumps over the lazy dog. This sentence contains every letter of the alphabet.">Pangram (all letters)</option>
+                    <option value="Welcome to JimmyWithFiona, your collection of free online tools and games. Everything runs in your browser.">Product intro</option>
+                    <option value="In a world of endless possibilities, every voice matters. Let yours be heard.">Inspirational</option>
+                    <option value="Chapter one. It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness.">Story excerpt</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="control-row">
+            <div class="control-group">
+                <div class="control-label"><label>Speed</label><span class="val" id="rateVal">1.0x</span></div>
+                <input type="range" id="rate" min="0.5" max="2" value="1" step="0.1">
+            </div>
+            <div class="control-group">
+                <div class="control-label"><label>Pitch</label><span class="val" id="pitchVal">1.0</span></div>
+                <input type="range" id="pitch" min="0" max="2" value="1" step="0.1">
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>Your Text</label>
+            <textarea id="textInput" placeholder="Type or paste your text here...">Hello! This is a text to speech demo. Try adjusting the speed and pitch to find the voice you like.</textarea>
+        </div>
+
+        <div class="btn-row">
+            <button class="btn btn-success" onclick="speak()" id="speakBtn">🔊 Speak</button>
+            <button class="btn btn-secondary" onclick="pauseSpeech()" id="pauseBtn">⏸ Pause</button>
+            <button class="btn btn-secondary" onclick="resumeSpeech()" id="resumeBtn">▶ Resume</button>
+            <button class="btn btn-secondary" onclick="stopSpeech()">⏹ Stop</button>
+        </div>
+        <div class="status-msg" id="statusMsg"></div>
+    </div>
+
+    <div class="stats-footer">👁️ Views <strong id="pv">-</strong><span class="stat-divider">|</span>👤 Visitors <strong id="uv">-</strong></div>
+
+    <div class="seo-section">
+        <h2>Free Text to Speech Converter</h2>
+        <p>Convert any text into natural-sounding speech with our free online TTS tool. Choose from multiple languages and voices, adjust the speaking rate and pitch, and listen instantly. No signup, no download — everything runs in your browser using the Web Speech API.</p>
+        <h2>How It Works</h2>
+        <p>The tool uses your browser's built-in Speech Synthesis engine (Web Speech API). When you enter text and click Speak, the browser converts the text into spoken audio in real-time. Available voices depend on your operating system and browser — most modern browsers include voices for major languages.</p>
+        <h2>Features</h2>
+        <ul>
+            <li><strong>Multiple languages</strong> — English, Spanish, French, German, Chinese, Japanese, and more</li>
+            <li><strong>Multiple voices</strong> — Select from all voices available on your device</li>
+            <li><strong>Adjustable speed</strong> — Slow down (0.5x) or speed up (2x) the speech</li>
+            <li><strong>Adjustable pitch</strong> — Lower or raise the voice pitch</li>
+            <li><strong>Play, pause, resume, stop</strong> — Full playback control</li>
+            <li><strong>Sample texts</strong> — Quick-start with built-in examples</li>
+            <li><strong>100% private</strong> — All processing happens in your browser</li>
+        </ul>
+        <h2>Use Cases</h2>
+        <ul>
+            <li><strong>Accessibility</strong> — Help visually impaired users read text content</li>
+            <li><strong>Language learning</strong> — Hear correct pronunciation of words and phrases</li>
+            <li><strong>Content creation</strong> — Generate voiceovers for videos and presentations</li>
+            <li><strong>Proofreading</strong> — Listen to your writing to catch errors</li>
+            <li><strong>E-learning</strong> — Add audio narration to educational materials</li>
+            <li><strong>Reading long articles</strong> — Let the browser read while you multitask</li>
+        </ul>
+        <h2>Privacy</h2>
+        <p>Your text is 100% private. All speech synthesis happens locally in your browser. No text is sent to any server.</p>
+        <h2>Frequently Asked Questions</h2>
+        <p><strong>Is it free?</strong> — Yes, completely free with no limits.</p>
+        <p><strong>What languages?</strong> — All languages available in your browser's speech engine.</p>
+        <p><strong>Can I adjust speed?</strong> — Yes, 0.5x to 2x, plus pitch control.</p>
+        <p><strong>Does it work on mobile?</strong> — Yes, on browsers that support Web Speech API.</p>
+    </div>
+</main>
+<footer>
+    <p><a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="contact.html">Contact</a> · <a href="/">Home</a></p>
+    <p style="margin-top:0.4rem;">Text to Speech © 2026 · Free online TTS converter</p>
+    <div style="margin-top:0.6rem;font-size:0.72rem;opacity:0.6;">More: <a href="/word-counter/">Word Counter</a> · <a href="/piano/">Piano</a> · <a href="/password-generator/">Password Generator</a></div>
+</footer>
+<script src="js/counter.js" defer></script>
+<script>
+let allVoices = [];
+let synth = window.speechSynthesis;
+
+function loadVoices() {
+    allVoices = synth.getVoices();
+    if (allVoices.length === 0) return;
+
+    document.getElementById("voiceInfo").innerHTML = "<strong>✅ " + allVoices.length + " voices available!</strong> Select a language and voice to begin.";
+
+    // Build language dropdown
+    const langs = [...new Set(allVoices.map(v => v.lang))].sort();
+    const langSelect = document.getElementById("language");
+    langSelect.innerHTML = "";
+    langs.forEach(l => {
+        const opt = document.createElement("option");
+        opt.value = l;
+        opt.textContent = l + " — " + (allVoices.find(v => v.lang === l)?.name.split(" - ")[0] || "");
+        langSelect.appendChild(opt);
+    });
+
+    // Default to en-US if available
+    const defaultLang = langs.find(l => l.startsWith("en")) || langs[0];
+    langSelect.value = defaultLang;
+    filterVoices();
+}
+
+function filterVoices() {
+    const lang = document.getElementById("language").value;
+    const voiceSelect = document.getElementById("voice");
+    voiceSelect.innerHTML = "";
+    const filtered = allVoices.filter(v => v.lang === lang);
+    filtered.forEach((v, i) => {
+        const opt = document.createElement("option");
+        opt.value = filtered.indexOf(v);
+        opt.textContent = v.name + (v.localService ? "" : " (cloud)");
+        voiceSelect.appendChild(opt);
+    });
+}
+
+function loadSample() {
+    const sample = document.getElementById("sampleText").value;
+    if (sample) document.getElementById("textInput").value = sample;
+}
+
+document.getElementById("rate").addEventListener("input", e => {
+    document.getElementById("rateVal").textContent = parseFloat(e.target.value).toFixed(1) + "x";
+});
+document.getElementById("pitch").addEventListener("input", e => {
+    document.getElementById("pitchVal").textContent = parseFloat(e.target.value).toFixed(1);
+});
+
+function speak() {
+    const text = document.getElementById("textInput").value.trim();
+    if (!text) { document.getElementById("statusMsg").textContent = "Please enter some text."; return; }
+    if (text.length > 5000) { document.getElementById("statusMsg").textContent = "Text too long (max 5000 characters)."; return; }
+
+    synth.cancel();
+
+    const utter = new SpeechSynthesisUtterance(text);
+    const voiceIdx = parseInt(document.getElementById("voice").value);
+    if (!isNaN(voiceIdx) && allVoices[voiceIdx]) {
+        utter.voice = allVoices[voiceIdx];
+        utter.lang = allVoices[voiceIdx].lang;
+    }
+    utter.rate = parseFloat(document.getElementById("rate").value);
+    utter.pitch = parseFloat(document.getElementById("pitch").value);
+
+    utter.onstart = () => { document.getElementById("statusMsg").innerHTML = '<span class="spinner"></span>Speaking...'; };
+    utter.onend = () => { document.getElementById("statusMsg").textContent = "✅ Done"; };
+    utter.onerror = (e) => { document.getElementById("statusMsg").textContent = "❌ Error: " + e.error; };
+
+    synth.speak(utter);
+}
+
+function pauseSpeech() { if (synth.speaking) { synth.pause(); document.getElementById("statusMsg").textContent = "⏸ Paused"; } }
+function resumeSpeech() { if (synth.paused) { synth.resume(); document.getElementById("statusMsg").innerHTML = '<span class="spinner"></span>Speaking...'; } }
+function stopSpeech() { synth.cancel(); document.getElementById("statusMsg").textContent = ""; }
+
+// Load voices (may need to wait for event)
+if (synth.onvoiceschanged !== undefined) {
+    synth.onvoiceschanged = loadVoices;
+}
+// Try loading immediately
+loadVoices();
+// Retry after delay
+setTimeout(loadVoices, 500);
+setTimeout(loadVoices, 1500);
+</script>
+</body>
+</html>
