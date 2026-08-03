@@ -28,5 +28,35 @@
 </main>
 <footer><p>© 2026 Text to Speech · <a href="/">Home</a></p></footer>
 <script src="js/counter.js" defer></script>
+<!-- I18N-FULL -->
+<script>
+(function(){
+var lang=(navigator.language||navigator.userLanguage||'en').toLowerCase();
+if(!lang.startsWith('zh'))return;
+var ZH={"🔊 Text to Speech":"🔊 文字转语音","Convert":"转换","About":"关于","Privacy":"隐私","Contact":"联系","🏠 Home":"🏠 首页","Privacy Policy":"隐私政策","Last updated: July 30, 2026":"最后更新：2026年7月30日","100% private.":"100%私密。","All processing happens locally in your browser.":"所有处理均在你的浏览器本地完成。","Third-Party Services":"第三方服务","GitHub Pages — hosting (static files only)":"GitHub Pages — 托管（仅静态文件）","Google AdSense — may show ads":"Google AdSense — 可能显示广告","Counter API — anonymous view counting":"Counter API — 匿名浏览计数","Questions? Visit our":"有疑问？请访问我们的","contact page":"联系页面","👁️ Views":"👁️ 浏览量","👤 Visitors":"👤 访客数","© 2026 Text to Speech ·":"© 2026 文字转语音 ·","Home":"首页"};
+function walk(node){
+if(node.nodeType===3){
+var t=node.textContent,k=t.trim();
+if(k&&ZH[k]){node.textContent=t.replace(k,ZH[k])}
+}else if(node.nodeType===1&&node.tagName!=='SCRIPT'&&node.tagName!=='STYLE'&&node.tagName!=='NOSCRIPT'){
+if(node.childNodes.length>1){
+var full=node.textContent.trim();
+if(ZH[full]){node.textContent=ZH[full];return}
+}
+for(var i=0;i<node.childNodes.length;i++){walk(node.childNodes[i])}
+}
+}
+walk(document.body);
+document.documentElement.lang='zh-CN';
+var mo=new MutationObserver(function(muts){
+muts.forEach(function(m){
+if(m.type==='childList'){m.addedNodes.forEach(function(n){walk(n)})}
+else if(m.type==='characterData'){walk(m.target)}
+});
+});
+mo.observe(document.body,{childList:true,subtree:true,characterData:true});
+})();
+</script>
+<!-- /I18N-FULL -->
 </body>
 </html>

@@ -28,5 +28,35 @@
 </main>
 <footer><p>© 2026 Text to Speech · <a href="/">Home</a></p></footer>
 <script src="js/counter.js" defer></script>
+<!-- I18N-FULL -->
+<script>
+(function(){
+var lang=(navigator.language||navigator.userLanguage||'en').toLowerCase();
+if(!lang.startsWith('zh'))return;
+var ZH={"🔊 Text to Speech":"🔊 文字转语音","Convert":"转换","About":"关于","Privacy":"隐私","Contact":"联系","🏠 Home":"🏠 首页","About Text to Speech":"关于文字转语音","Free online text to speech converter — multiple languages, voices, adjustable speed and pitch. All processing happens in your browser — no signup, no upload.":"免费的在线文字转语音转换器 — 支持多种语言、语音、可调节速度和音调。所有处理均在浏览器中完成 — 无需注册、无需上传。","Features":"功能特点","100% free, no signup":"100%免费，无需注册","Runs entirely in your browser":"完全在浏览器中运行","No data collected or uploaded":"不收集或上传数据","Use Text to Speech →":"使用文字转语音 →","👁️ Views":"👁️ 浏览量","👤 Visitors":"👤 访客数","© 2026 Text to Speech ·":"© 2026 文字转语音 ·","Home":"首页"};
+function walk(node){
+if(node.nodeType===3){
+var t=node.textContent,k=t.trim();
+if(k&&ZH[k]){node.textContent=t.replace(k,ZH[k])}
+}else if(node.nodeType===1&&node.tagName!=='SCRIPT'&&node.tagName!=='STYLE'&&node.tagName!=='NOSCRIPT'){
+if(node.childNodes.length>1){
+var full=node.textContent.trim();
+if(ZH[full]){node.textContent=ZH[full];return}
+}
+for(var i=0;i<node.childNodes.length;i++){walk(node.childNodes[i])}
+}
+}
+walk(document.body);
+document.documentElement.lang='zh-CN';
+var mo=new MutationObserver(function(muts){
+muts.forEach(function(m){
+if(m.type==='childList'){m.addedNodes.forEach(function(n){walk(n)})}
+else if(m.type==='characterData'){walk(m.target)}
+});
+});
+mo.observe(document.body,{childList:true,subtree:true,characterData:true});
+})();
+</script>
+<!-- /I18N-FULL -->
 </body>
 </html>
